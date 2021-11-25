@@ -25,119 +25,18 @@
           </div>
         </nav>
       </div>
-      <div class="dropdown">
-        <button
-          class="btn dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton2"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Home
-        </button>
-        <ul
-          class="dropdown-menu dropdown-menu-dark"
-          aria-labelledby="dropdownMenuButton2"
-        >
-          <li><a class="dropdown-item active" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
-      <div class="dropdown">
-        <button
-          class="btn dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton2"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Pages
-        </button>
-        <ul
-          class="dropdown-menu dropdown-menu-dark"
-          aria-labelledby="dropdownMenuButton2"
-        >
-          <li><a class="dropdown-item active" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
-      <div class="dropdown">
-        <button
-          class="btn dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton2"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          courses
-        </button>
-        <ul
-          class="dropdown-menu dropdown-menu-dark"
-          aria-labelledby="dropdownMenuButton2"
-        >
-          <li><a class="dropdown-item active" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
-      <div class="dropdown">
-        <button
-          class="btn dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton2"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Features
-        </button>
-        <ul
-          class="dropdown-menu dropdown-menu-dark"
-          aria-labelledby="dropdownMenuButton2"
-        >
-          <li><a class="dropdown-item active" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
-      <div class="dropdown">
-        <button
-          class="btn dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton2"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Blog
-        </button>
-        <ul
-          class="dropdown-menu dropdown-menu-dark"
-          aria-labelledby="dropdownMenuButton2"
-        >
-          <li><a class="dropdown-item active" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
-      <div class="dropdown">
-        <button
-          class="btn dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton2"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          shop
-        </button>
-        <ul
-          class="dropdown-menu dropdown-menu-dark"
-          aria-labelledby="dropdownMenuButton2"
-        >
-          <li><a class="dropdown-item active" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
+      <div v-for="link in navBar" :key="link.name">
+        <div class="header_link" @click="getLink()">
+          {{link.name}} 
+          <span>
+            <img :src="link.chevron" alt="">
+          </span>
+          <div class="dropdown">
+            <a>{{link.dd1}}</a>
+            <a>{{link.dd2}}</a>
+            <a>{{link.dd3}}</a>
+          </div>
+        </div>
       </div>
     </section>
     <!-- menu di sinistra -->
@@ -184,6 +83,19 @@
   </div>
 </template>
 
+<script>
+export default {
+  props:{
+    navBar:Array
+  },
+  data(){
+    return{
+    }
+  }
+}
+
+</script>
+
 
 <style lang="scss" scoped>
 @import "./colori.scss";
@@ -206,17 +118,38 @@
           color: $brandColor;
       }
   }
-  .dropdown {
-    width: calc(100% / 6);
-    margin: 0 0.5rem;
-    button {
-      font-size: 0.7rem;
+  .header_link{
+    margin-right: .7rem;
+    position: relative;
+    &:hover{
+      color: $brandColor;
+      cursor: pointer;
     }
-    ul{
-        background-color: $brandColor;
+    &:hover .dropdown{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
     }
-    .dropdown-item .active{
-        background-color: #3f3a64;
+    span{
+      img{
+        width: .5rem;
+      }
+    }
+    .dropdown{
+      display: none;
+      position: absolute;
+      z-index: 10;
+      width: 6rem;
+      left: 1rem;
+      background-color: $brandColor;
+      text-align: center;
+      a{
+        color: white;
+        width: 100%;
+        &:hover{
+          background-color: #3f3a64;
+        }
+      }
     }
   }
 }

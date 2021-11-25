@@ -1,7 +1,9 @@
 <template>
   <div class="hero_image container-fluid d-flex flex-column align-items-center">
+    <!-- testo  -->
     <h5>Commence Buisness</h5>
     <h1>Distant Mentoring Program</h1>
+    <!-- bottone download  -->
     <div class="btn_download">
       <button>
         Download free guidebook
