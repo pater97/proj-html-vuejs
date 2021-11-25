@@ -184,9 +184,6 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
 
 <style lang="scss" scoped>
 @import "./colori.scss";
@@ -214,6 +211,12 @@ export default {};
     margin: 0 0.5rem;
     button {
       font-size: 0.7rem;
+    }
+    ul{
+        background-color: $brandColor;
+    }
+    .dropdown-item .active{
+        background-color: #3f3a64;
     }
   }
 }
