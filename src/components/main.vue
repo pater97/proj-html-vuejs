@@ -84,6 +84,20 @@
         <div class="dati"></div>
       </div>
     </section>
+    <section id="dati" class="d-flex justify-content-center text-center">
+        <div class="col-md-3">
+            <h2 class="brand_color fw-bold">129+</h2>
+            <h6>ENROLLED LEARNES</h6>
+        </div>
+        <div class="col-md-3">
+            <h2 class="brand_color fw-bold">80</h2>
+            <h6>FINISHED SESSION</h6>
+        </div>
+        <div class="col-md-3">
+            <h2 class="brand_color fw-bold">4%</h2>
+            <h6>SATISFACTION RATE</h6>
+        </div>
+    </section>
   </div>
 </template>
 
@@ -164,4 +178,12 @@
     right: 5rem;
   }
 }
+// SEZIONE CON DATI
+#dati{
+    h6{
+        color: #6e6b69;
+        font-size: .7rem;
+        font-weight: bold;
+    }
+} 
 </style>

@@ -205,7 +205,7 @@ export default {
 }
 @media screen and (max-width: 1279px) {
   .left {
-    .dropdown {
+    .header_link {
       display: none;
     }
     .hidden_hamburger{
