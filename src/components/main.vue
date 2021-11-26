@@ -165,7 +165,7 @@
       <div class="row" v-show="array1">
         <div class="col-md-4" v-for="corso in corsiSlide1" :key="corso.value">
           <div class="image">
-            <img src="../assets/courses/slide.jpg" alt="" />
+            <img :src="require(`../assets/courses/${corso.img}`)" alt="" />
             <div class="free" v-show="corso.free">FREE</div>
           </div>
           <div class="info">
@@ -194,7 +194,7 @@
        <div class="row" v-show="array2">
         <div class="col-md-4" v-for="corso in corsiSlide2" :key="corso.value">
           <div class="image">
-            <img src="../assets/courses/slide.jpg" alt="" />
+            <img :src="corso.img" alt="" />
             <div class="free" v-show="corso.free">FREE</div>
           </div>
           <div class="info">
@@ -223,7 +223,7 @@
        <div class="row" v-show="array3">
         <div class="col-md-4" v-for="corso in corsiSlide3" :key="corso.value">
           <div class="image">
-            <img src="../assets/courses/slide.jpg" alt="" />
+            <img :src="corso.img" alt="" />
             <div class="free" v-show="corso.free">FREE</div>
           </div>
           <div class="info">
@@ -298,7 +298,7 @@ export default {
           students: "50 students",
         },
         {
-          img: "",
+          img: "slide2.jpg",
           price: "$0.",
           value: "00",
           descrition: "Customer-Centric info-Tech Strategist",
@@ -307,7 +307,7 @@ export default {
           students: "769 students",
         },
         {
-          img: "",
+          img: "slide3.jpg",
           price: "$19.",
           value: "00",
           free: false,
@@ -318,7 +318,7 @@ export default {
       ],
       corsiSlide2: [
         {
-          img: "slide.jpg",
+          img: "https://images.pexels.com/photos/6929180/pexels-photo-6929180.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           price: "$0.",
           free: true,
           value: "00",
@@ -327,7 +327,7 @@ export default {
           students: "10 students",
         },
         {
-          img: "",
+          img: "https://images.pexels.com/photos/6929190/pexels-photo-6929190.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           price: "$12.",
           value: "00",
           descrition: "Guida Pratica e Completa a Django, Python e Bootstrap",
@@ -336,7 +336,7 @@ export default {
           students: "300 students",
         },
         {
-          img: "",
+          img: "https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           price: "$30.",
           value: "00",
           free: false,
@@ -347,7 +347,7 @@ export default {
       ],
       corsiSlide3: [
         {
-          img: "slide.jpg",
+          img: "https://images.pexels.com/photos/6224/hands-people-woman-working.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           price: "$110.",
           free: false,
           value: "00",
@@ -356,7 +356,7 @@ export default {
           students: "30 students",
         },
         {
-          img: "",
+          img: "https://images.pexels.com/photos/6229/marketing-board-strategy.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           price: "$0.",
           value: "00",
           descrition: "CORSO COPYWRITING: SCRIVERE PER VENDERE",
@@ -365,7 +365,7 @@ export default {
           students: "800 students",
         },
         {
-          img: "",
+          img: "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
           price: "$50.",
           value: "00",
           free: false,
@@ -567,6 +567,9 @@ export default {
   .row {
     .col-md-4:hover .descrition{
       color: $brandColor;
+    }
+    .col-md-4:hover img{
+      transform: scale(105%)
     }
     .image {
       margin: 4rem 0 1rem 0;

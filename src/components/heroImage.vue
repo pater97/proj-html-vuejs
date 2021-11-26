@@ -61,6 +61,8 @@
           &:hover{
               color: white;
               background-color: $brandColor;
+              transform: scale(110%);
+              transition: all 1s;
           }
       }
       svg{
