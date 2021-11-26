@@ -29,7 +29,7 @@
         <div class="header_link" @click="getLink()">
           {{link.name}} 
           <span>
-            <img :src="link.chevron" alt="">
+            <img class="chevron" src="../assets/icon/chevron-down-solid.svg" alt="">
           </span>
           <div class="dropdown">
             <a>{{link.dd1}}</a>
@@ -129,6 +129,10 @@ export default {
           display: flex;
           flex-direction: column;
           align-items: center;
+    }
+    &:hover .chevron{
+      transform: rotate(180deg);
+        transition: all .5s;
     }
     span{
       img{
