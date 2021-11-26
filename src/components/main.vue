@@ -3,9 +3,9 @@
     <!-- sezione inerente alla 'work culture' con dati -->
     <section id="work_culture">
       <div class="row">
-          <!-- colonna di sinistra con testo -->
+        <!-- colonna di sinistra con testo -->
         <div class="text col-md-6 d-flex">
-            <!-- sezione di solo testo  -->
+          <!-- sezione di solo testo  -->
           <div class="left_text col-9">
             <h6>EVERYTHING IN <span>MAXCOACH</span></h6>
             <h2>
@@ -21,7 +21,7 @@
             <p>
               Have questions?
               <span class="brand_color">
-                  Get free guide
+                Get free guide
                 <svg
                   aria-hidden="true"
                   focusable="false"
@@ -84,19 +84,72 @@
         <div class="dati"></div>
       </div>
     </section>
+    <!-- sezione con i dati dei risultati  -->
     <section id="dati" class="d-flex justify-content-center text-center">
-        <div class="col-md-3">
-            <h2 class="brand_color fw-bold">129+</h2>
-            <h6>ENROLLED LEARNES</h6>
+      <div class="col-md-3">
+        <h2 class="brand_color fw-bold">129+</h2>
+        <h6>ENROLLED LEARNES</h6>
+      </div>
+      <div class="col-md-3">
+        <h2 class="brand_color fw-bold">80</h2>
+        <h6>FINISHED SESSION</h6>
+      </div>
+      <div class="col-md-3">
+        <h2 class="brand_color fw-bold">4%</h2>
+        <h6>SATISFACTION RATE</h6>
+      </div>
+    </section>
+    <!-- sezione motto miglira la tua vita -->
+    <section id="upgrade_skills">
+      <div class="row">
+        <div class="col-md-6 upgrade_image position-relative">
+          <div class="upgrade_principal">
+            <img
+              class="upgrade_principal_image"
+              src="../assets/principal/upgrade-principal.jpg"
+              alt=""
+            />
+            <img
+              class="youtube_play"
+              src="../assets/icon/icon-youtube-play.png"
+              alt=""
+            />
+          </div>
+          <img class="up_shape_radius" src="../assets/shape/mc5.png" alt="" />
+          <img class="up_shape_square" src="../assets/shape/mc7.png" alt="" />
         </div>
-        <div class="col-md-3">
-            <h2 class="brand_color fw-bold">80</h2>
-            <h6>FINISHED SESSION</h6>
+        <div class="col-md-6 upgrade_text">
+          <h6>HOW WE WORK</h6>
+          <h2>
+            Upgrade Your Skills
+            <span class="brand_color">Upgrade Your life</span>
+          </h2>
+          <p>
+            Opening up more opportunities in front of you to get the ticket to
+            more enjoyable door in info. Getting equipped with new skills for
+            new sets of insights into your career.Maxcoach accompany in every
+            stage of learning.
+          </p>
+          <div>
+            Download free guidebook
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="long-arrow-alt-right"
+              class="svg-inline--fa fa-long-arrow-alt-right fa-w-14"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <path
+                fill="currentColor"
+                d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
+              ></path>
+            </svg>
+          </div>
         </div>
-        <div class="col-md-3">
-            <h2 class="brand_color fw-bold">4%</h2>
-            <h6>SATISFACTION RATE</h6>
-        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -106,48 +159,49 @@
 .brand_color {
   color: $brandColor;
 }
-    // impostazioni comuni
-    .text,
-    .work_culture_image {
-      padding: 8rem 0;
-      position: relative;
-    }
-    .square_shape,
-    .geometric_shape,
-    .secondary_image {
-      position: absolute;
-    }
-// sezione colonna di testo 
-.text{
-    .left_text{
-        h2{
-            font-size: 3rem;
-        }
-        h6 {
-          color: $greyText;
-          span {
-            font-weight: bolder;
-            color: #6e6b69;
-          }
-        }
-        p {
-          span {
-              font-weight: bolder;
-              &:hover{
-                  text-decoration: underline;
-              }
-            svg {
-              width: 1rem;
-            }
-          }
-        }
-    }
-    .right_shape{
-        width: 3rem;
-        color: #ECC5AB;
-    }
+// impostazioni comuni
+.text,
+.work_culture_image {
+  padding: 8rem 0;
+  position: relative;
 }
-// sezione immagini 
+.square_shape,
+.geometric_shape,
+.secondary_image {
+  position: absolute;
+}
+// sezione colonna di testo
+.text {
+  .left_text {
+    h2 {
+      font-size: 3rem;
+    }
+    h6 {
+      color: $greyText;
+      span {
+        font-weight: bolder;
+        color: #6e6b69;
+      }
+    }
+    p {
+      span {
+        font-weight: bolder;
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+        svg {
+          width: 1rem;
+        }
+      }
+    }
+  }
+  .right_shape {
+    width: 3rem;
+    color: #ecc5ab;
+  }
+}
+// sezione immagini
 .work_culture_image {
   &:hover .geometric_shape {
     transform: rotate(360deg);
@@ -179,11 +233,74 @@
   }
 }
 // SEZIONE CON DATI
-#dati{
-    h6{
-        color: #6e6b69;
-        font-size: .7rem;
-        font-weight: bold;
+#dati {
+  h6 {
+    color: #6e6b69;
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+}
+// sezione upgrade skills
+#upgrade_skills {
+  padding: 8rem 0;
+  .upgrade_image {
+    .upgrade_principal {
+      position: relative;
+      width: 100%;
+      z-index: 10;
+      .upgrade_principal_image {
+        width: 100%;
+        border-radius: 10px;    
+        box-shadow: 2px 14px 20px 0px #625e5e;
+        &:hover{
+            filter: brightness(.5);
+        }
+      }
+      .youtube_play {
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        &:hover{
+            cursor: pointer;
+        }
+      }
     }
-} 
+    .up_shape_radius,
+    .up_shape_square {
+      position: absolute;
+      width: 9rem;
+    }
+    .up_shape_radius {
+      top: 3rem;
+      left: -5rem;
+      z-index: 1;
+    }
+    .up_shape_square {
+      bottom: -4rem;
+      right: -1rem;
+      z-index: 1;
+    }
+  }
+  .upgrade_text {
+    padding-left: 5rem;
+    h6,
+    p {
+      color: $greyText;
+    }
+    h2 {
+      font-size: 3.5rem;
+      padding-bottom: 1rem;
+    }
+    div {
+      font-weight: bold;
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      svg {
+        width: 1rem;
+      }
+    }
+  }
+}
 </style>
