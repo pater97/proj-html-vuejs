@@ -164,117 +164,332 @@
       <!-- gruppo slide 1 -->
       <div class="row" v-show="array1">
         <div class="col-md-4" v-for="corso in corsiSlide1" :key="corso.value">
-          <div class="image">
-            <img :src="require(`../assets/courses/${corso.img}`)" alt="" />
-            <div class="free" v-show="corso.free">FREE</div>
-          </div>
-          <div class="info">
-            <div class="price brand_color">
-              <h5>
-                {{ corso.price }}<span>{{ corso.value }}</span>
-              </h5>
+          <div class="card">
+            <div class="image">
+              <img :src="require(`../assets/courses/${corso.img}`)" alt="" />
+              <div class="free" v-show="corso.free">FREE</div>
             </div>
-            <div class="descrition">
-              <p>{{ corso.descrition }}</p>
-            </div>
-            <div class="info_numbers d-flex justify-content-around">
-              <h6>
-                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="book" class="svg-inline--fa fa-book fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"></path></svg>
-                 {{ corso.lessons }}
-              </h6>
-              <h6>
-                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="user" class="svg-inline--fa fa-user fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"></path></svg>
-                {{ corso.students }}
-              </h6>
+            <div class="info">
+              <div class="price brand_color">
+                <h5>
+                  {{ corso.price }}<span>{{ corso.value }}</span>
+                </h5>
+              </div>
+              <div class="descrition">
+                <p>{{ corso.descrition }}</p>
+              </div>
+              <div class="info_numbers d-flex justify-content-around">
+                <h6>
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fas"
+                    data-icon="book"
+                    class="svg-inline--fa fa-book fa-w-14"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"
+                    ></path>
+                  </svg>
+                  {{ corso.lessons }}
+                </h6>
+                <h6>
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="far"
+                    data-icon="user"
+                    class="svg-inline--fa fa-user fa-w-14"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"
+                    ></path>
+                  </svg>
+                  {{ corso.students }}
+                </h6>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <!-- gruppo slide 2 -->
-       <div class="row" v-show="array2">
+      <div class="row" v-show="array2">
         <div class="col-md-4" v-for="corso in corsiSlide2" :key="corso.value">
-          <div class="image">
-            <img :src="corso.img" alt="" />
-            <div class="free" v-show="corso.free">FREE</div>
-          </div>
-          <div class="info">
-            <div class="price brand_color">
-              <h5>
-                {{ corso.price }}<span>{{ corso.value }}</span>
-              </h5>
+          <div class="card">
+            <div class="image">
+              <img :src="corso.img" alt="" />
+              <div class="free" v-show="corso.free">FREE</div>
             </div>
-            <div class="descrition">
-              <p>{{ corso.descrition }}</p>
-            </div>
-            <div class="info_numbers d-flex justify-content-around">
-              <h6>
-                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="book" class="svg-inline--fa fa-book fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"></path></svg>
-                 {{ corso.lessons }}
-              </h6>
-              <h6>
-                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="user" class="svg-inline--fa fa-user fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"></path></svg>
-                {{ corso.students }}
-              </h6>
+            <div class="info">
+              <div class="price brand_color">
+                <h5>
+                  {{ corso.price }}<span>{{ corso.value }}</span>
+                </h5>
+              </div>
+              <div class="descrition">
+                <p>{{ corso.descrition }}</p>
+              </div>
+              <div class="info_numbers d-flex justify-content-around">
+                <h6>
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fas"
+                    data-icon="book"
+                    class="svg-inline--fa fa-book fa-w-14"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"
+                    ></path>
+                  </svg>
+                  {{ corso.lessons }}
+                </h6>
+                <h6>
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="far"
+                    data-icon="user"
+                    class="svg-inline--fa fa-user fa-w-14"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"
+                    ></path>
+                  </svg>
+                  {{ corso.students }}
+                </h6>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <!-- gruppo slide 3 -->
-       <div class="row" v-show="array3">
+      <div class="row" v-show="array3">
         <div class="col-md-4" v-for="corso in corsiSlide3" :key="corso.value">
-          <div class="image">
-            <img :src="corso.img" alt="" />
-            <div class="free" v-show="corso.free">FREE</div>
-          </div>
-          <div class="info">
-            <div class="price brand_color">
-              <h5>
-                {{ corso.price }}<span>{{ corso.value }}</span>
-              </h5>
+          <div class="card">
+            <div class="image">
+              <img :src="corso.img" alt="" />
+              <div class="free" v-show="corso.free">FREE</div>
             </div>
-            <div class="descrition">
-              <p>{{ corso.descrition }}</p>
-            </div>
-            <div class="info_numbers d-flex justify-content-around">
-              <h6>
-                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="book" class="svg-inline--fa fa-book fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"></path></svg>
-                 {{ corso.lessons }}
-              </h6>
-              <h6>
-                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="user" class="svg-inline--fa fa-user fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"></path></svg>
-                {{ corso.students }}
-              </h6>
+            <div class="info">
+              <div class="price brand_color">
+                <h5>
+                  {{ corso.price }}<span>{{ corso.value }}</span>
+                </h5>
+              </div>
+              <div class="descrition">
+                <p>{{ corso.descrition }}</p>
+              </div>
+              <div class="info_numbers d-flex justify-content-around">
+                <h6>
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fas"
+                    data-icon="book"
+                    class="svg-inline--fa fa-book fa-w-14"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"
+                    ></path>
+                  </svg>
+                  {{ corso.lessons }}
+                </h6>
+                <h6>
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="far"
+                    data-icon="user"
+                    class="svg-inline--fa fa-user fa-w-14"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"
+                    ></path>
+                  </svg>
+                  {{ corso.students }}
+                </h6>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <!-- pallini per navigare nelle slide  -->
       <div class="scroll_slide">
-        <div :class="{'active':array1}" @click="getSlideOne"></div>
-        <div :class="{'active':array2}" @click="getSlideTwo"></div>
-        <div :class="{'active':array3}" @click="getSlideThree"></div>
+        <div :class="{ active: array1 }" @click="getSlideOne"></div>
+        <div :class="{ active: array2 }" @click="getSlideTwo"></div>
+        <div :class="{ active: array3 }" @click="getSlideThree"></div>
       </div>
       <div class="all_courses col-md-5">
         <p>
-          Control your personal preference settings to get notifed about appropiate courses.
-           <a href="#">
-             View all courses
-             <svg
-                  aria-hidden="true"
-                  focusable="false"
-                  data-prefix="fas"
-                  data-icon="long-arrow-alt-right"
-                  class="svg-inline--fa fa-long-arrow-alt-right fa-w-14"
-                  role="img"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 448 512"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
-                  ></path></svg>
-           </a>
+          Control your personal preference settings to get notifed about
+          appropiate courses.
+          <a href="#">
+            View all courses
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="long-arrow-alt-right"
+              class="svg-inline--fa fa-long-arrow-alt-right fa-w-14"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <path
+                fill="currentColor"
+                d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
+              ></path>
+            </svg>
+          </a>
         </p>
+      </div>
+    </section>
+    <!-- sezione testimonianze  -->
+    <section id="testimonials">
+      <div class="row">
+        <div class="col-md-4">
+          <h6>TESTIMONIALS</h6>
+          <h2>Why Do People <span class="brand_color">*Hearts*</span> Us?</h2>
+          <p>
+            Seeking for verbals of our service quality? Find them here. <br />
+            Everyting is trasparent and straightforward for your sense of
+            justification.
+          </p>
+          <p>
+            View all
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="long-arrow-alt-right"
+              class="svg-inline--fa fa-long-arrow-alt-right fa-w-14"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <path
+                fill="currentColor"
+                d="M313.941 216H12c-6.627 0-12 5.373-12 12v56c0 6.627 5.373 12 12 12h301.941v46.059c0 21.382 25.851 32.09 40.971 16.971l86.059-86.059c9.373-9.373 9.373-24.569 0-33.941l-86.059-86.059c-15.119-15.119-40.971-4.411-40.971 16.971V216z"
+              ></path>
+            </svg>
+          </p>
+        </div>
+        <div class="col-md-8">
+          <div class="card bottom">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. lorem
+              asuhfabas xhnhasusni ejsja riebna fdeo e ifdweinwe ii
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Perferendis numquam sint corporis, at tempore quo nihil molestiae
+              illo dolorem laudantium, repudiandae eos aperiam deserunt libero
+              facilis sed magni! Suscipit illum quam ullam praesentium illo
+              doloremque sed veritatis eaque? Aspernatur, obcaecati et ipsa
+              dicta quaerat nam tempora repellat quia exercitationem illum
+              laudantium odit explicabo, possimus aut sequi voluptatibus vel
+              voluptas ullam fugit commodi id nisi accusamus. A quos odio
+              aliquid! Facere eligendi quis inventore quam atque suscipit
+              numquam praesentium accusamus, quae animi deleniti adipisci
+              minima! Hic id odit tempore dolor asperiores obcaecati qui rerum
+              ratione reprehenderit officia commodi, adipisci repellat unde?
+            </p>
+            <div class="avatar">
+              <img src="../assets/avatar/testimonial-avata-02.jpg" alt="" />
+            </div>
+          </div>
+          <div class="card top">
+            <p class="fw-bold">
+              Professional team of specialists and passionate moentors at reach
+            </p>
+            <p class="text-muted">
+              i need to get a certification for English proficency and MaxCoach
+              is my best choiche. Their tutors are smarth and professional when
+              dealing whit students.
+            </p>
+            <div class="avatar d-flex">
+              <img src="../assets/avatar/testimonial-avata-01.jpg" alt="" />
+              <div class="avatar_info">
+                <h6 class="fw-bold">Madley Pondor</h6>
+                <p class="text-muted">/ IT Specialist</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- sezione guida -->
+    <section id="guida">
+      <div class="row">
+        <div class="left col-md-6">
+          <img
+            class="team_img"
+            src="../assets/avatar/home-3-team-image.png"
+            alt=""
+          />
+          <img
+            class="mc_shape"
+            src="../assets/shape/maxcoach-shape-01.png"
+            alt=""
+          />
+          <img class="mc5" src="../assets/shape/mc5.png" alt="" />
+          <img class="mc7" src="../assets/shape/mc7.png" alt="" />
+        </div>
+        <div class="right col-md-6">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="far"
+              data-icon="circle"
+              class="svg-inline--fa fa-circle fa-w-16"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+              ></path>
+            </svg>
+          <div class="info_text">
+            <h6>EVERYTHING IN <span class="fw-bolder">MAXCOACH</span></h6>
+            <h2>
+              We're Here to <br />
+              <span class="brand_color">Transform</span> You!
+            </h2>
+            <p class="text-muted">
+              As learnes,people can enjoy great compionship from br MaxCoach
+              menthors and educators.We can help you develop and grow at your
+              best
+            </p>
+            <button>Get Free Guide</button>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -284,9 +499,9 @@
 export default {
   data() {
     return {
-      array1:true,
-      array2:false,
-      array3:false,
+      array1: true,
+      array2: false,
+      array3: false,
       corsiSlide1: [
         {
           img: "slide.jpg",
@@ -322,7 +537,8 @@ export default {
           price: "$0.",
           free: true,
           value: "00",
-          descrition: "Corso completo di Data Science e machine learning con Python",
+          descrition:
+            "Corso completo di Data Science e machine learning con Python",
           lessons: "40 lessons",
           students: "10 students",
         },
@@ -340,7 +556,8 @@ export default {
           price: "$30.",
           value: "00",
           free: false,
-          descrition: "Social Media Marketing - Il Corso Completo con Certificato",
+          descrition:
+            "Social Media Marketing - Il Corso Completo con Certificato",
           lessons: "7 lessons",
           students: "70 students",
         },
@@ -369,29 +586,30 @@ export default {
           price: "$50.",
           value: "00",
           free: false,
-          descrition: "Web Marketing 4.0: il corso completo di digital marketing",
+          descrition:
+            "Web Marketing 4.0: il corso completo di digital marketing",
           lessons: "5 lessons",
           students: "50 students",
         },
       ],
     };
   },
-  methods:{
-    getSlideOne(){
-      this.array1 =  true
-      this.array2 = false
-      this.array3 = false
+  methods: {
+    getSlideOne() {
+      this.array1 = true;
+      this.array2 = false;
+      this.array3 = false;
     },
-    getSlideTwo(){
-      this.array1 =  false
-      this.array2 = true
-      this.array3 = false
+    getSlideTwo() {
+      this.array1 = false;
+      this.array2 = true;
+      this.array3 = false;
     },
-    getSlideThree(){
-      this.array1 =  false
-      this.array2 = false
-      this.array3 = true
-    }
+    getSlideThree() {
+      this.array1 = false;
+      this.array2 = false;
+      this.array3 = true;
+    },
   },
 };
 </script>
@@ -485,7 +703,7 @@ export default {
 // sezione upgrade skills
 #upgrade_skills {
   padding: 8rem 0;
-  // sezione con immagini 
+  // sezione con immagini
   .upgrade_image {
     .upgrade_principal {
       position: relative;
@@ -524,7 +742,7 @@ export default {
       z-index: 1;
     }
   }
-  // sezione con testo 
+  // sezione con testo
   .upgrade_text {
     padding-left: 5rem;
     h6,
@@ -549,7 +767,7 @@ export default {
 }
 // sezione corsi
 #courses {
-  // paragrafo con titoli 
+  // paragrafo con titoli
   .title_section {
     h6 {
       color: $greyText;
@@ -563,17 +781,22 @@ export default {
       }
     }
   }
-  // impostazioni slide 
+  // impostazioni slide
   .row {
-    .col-md-4:hover .descrition{
+    margin-top: 2rem;
+    .col-md-4:hover .descrition {
       color: $brandColor;
     }
-    .col-md-4:hover img{
-      transform: scale(105%)
+    .col-md-4:hover .card {
+      transform: scale(105%);
+    }
+    .card {
+      border: none;
+      background-color: rgba(228, 228, 228, 0.404);
     }
     .image {
-      margin: 4rem 0 1rem 0;
       position: relative;
+      height: 14rem;
       .free {
         position: absolute;
         top: 0;
@@ -584,6 +807,7 @@ export default {
       }
       img {
         width: 100%;
+        height: 100%;
         border-radius: 5px;
       }
     }
@@ -605,54 +829,187 @@ export default {
     }
     .info_numbers {
       h6 {
-        color: #ADACBD;
-        font-size: .8rem;
-        svg{
-          width: .8rem;
+        color: #adacbd;
+        font-size: 0.8rem;
+        svg {
+          width: 0.8rem;
         }
       }
     }
   }
-  // impostazioni per pallini di navigazione slide 
-  .scroll_slide{
+  // impostazioni per pallini di navigazione slide
+  .scroll_slide {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 2rem;
-    .active{
-      background-color:  $brandColor;
+    .active {
+      background-color: $brandColor;
       height: 1rem;
       width: 1rem;
     }
-    div{
-      height: .7rem;
-      width: .7rem;
+    div {
+      height: 0.7rem;
+      width: 0.7rem;
       border-radius: 50%;
       background-color: lightgrey;
-      margin: .5rem;
-      &:hover{
+      margin: 0.5rem;
+      &:hover {
         cursor: pointer;
         box-shadow: 0px 0px 5px 1px $brandColor;
       }
     }
   }
-  // paragrafo per link a tutti i corsi 
-  .all_courses{
+  // paragrafo per link a tutti i corsi
+  .all_courses {
     text-align: center;
     margin: auto;
-    p{
+    p {
       font-weight: 500;
       color: $greyText;
     }
-    a{
+    a {
       color: black;
       text-decoration: none;
       font-weight: bold;
-      &:hover{
+      &:hover {
         text-decoration: underline $brandColor;
       }
-      svg{
+      svg {
         width: 1rem;
+      }
+    }
+  }
+}
+// sezione testimonianze
+#testimonials {
+  margin: 5rem 0;
+  // colonna di sinistra
+  .col-md-4 {
+    align-self: center;
+    h6,
+    p {
+      color: $greyText;
+    }
+    h2 {
+      font-size: 3rem;
+    }
+    p:last-child {
+      color: black;
+      font-weight: bold;
+      &:hover {
+        text-decoration: underline;
+      }
+      svg {
+        width: 1rem;
+      }
+    }
+  }
+  // colonna di destra
+  .col-md-8 {
+    position: relative;
+    .bottom {
+      width: 60%;
+      margin: auto;
+      padding: 2rem;
+      box-shadow: 0px 0px 20px 0px grey;
+      border: none;
+      filter: opacity(0.3);
+      position: relative;
+      z-index: 1;
+      .avatar {
+        img {
+          width: 5rem;
+          border-radius: 50%;
+        }
+      }
+    }
+    .top {
+      padding: 2rem;
+      position: absolute;
+      z-index: 2;
+      top: 33%;
+      font-size: 1.3rem;
+      border: none;
+      box-shadow: 0px 0px 20px 0px rgb(194, 194, 194);
+      .avatar {
+        align-items: center;
+        img {
+          width: 5rem;
+          border-radius: 50%;
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}
+// sezione guida
+#guida {
+  margin: 10rem 0;
+  // sezione di sinistra
+  .left:hover .mc5,
+    .mc7,
+    .mc_shape {
+      transform: rotate(360deg);
+      transition: all 3s;
+    }
+  .left,
+  .team_img {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    .team_img {
+      width: 25rem;
+      z-index: 2;
+    }
+    .mc5,
+    .mc7,
+    .mc_shape {
+      position: absolute;
+      z-index: 1;
+    }
+    .mc5,
+    .mc7 {
+      width: 8rem;
+    }
+    .mc_shape {
+      left: 0;
+      bottom: 0;
+    }
+    .mc5 {
+      top: 20%;
+      left: 20%;
+    }
+    .mc7 {
+      width: 8rem;
+      bottom: -5rem;
+      right: 8rem;
+    }
+  }
+  // sezione di destra
+  .right {
+    svg{
+      width: 3rem;
+      color: #ECC5AB;
+      margin-bottom: 2rem;
+    }
+    .info_text{
+      width: 80%;
+      margin: auto;
+      h6 {
+        color: $greyText;
+      }
+      h2 {
+        font-size: 3rem;
+      }
+      button {
+        background-color: $brandColor;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        padding: 1rem 3rem;
+        margin: 1rem 0;
       }
     }
   }
