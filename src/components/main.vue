@@ -427,6 +427,10 @@
             </p>
             <div class="avatar">
               <img src="../assets/avatar/testimonial-avata-02.jpg" alt="" />
+              <div class="avatar_info">
+                <h6 class="fw-bold">Giulia Wallet</h6>
+                <p class="text-muted">/ IT Specialist</p>
+              </div>
             </div>
           </div>
           <div class="card top">
@@ -501,7 +505,7 @@
       </div>
     </section>
     <!-- seizione blog -->
-    <section id="blog" class="container">
+<section id="blog" class="container">
       <div class="blog_title">
         <h6 class="text-muted">
           READ FOR MORE JOYMENT
@@ -513,18 +517,16 @@
       <!-- slide card blog  -->
       <div class="row gy-5">
         <div class="col-md-4" v-for="blog in slideBlog" :key="blog.descrition">
-          <div class="card">
-            <div class="image">
-              <img :src="require(`../assets/courses/${blog.img}`)" alt="" />
+        <div  class="card">
+            <div class="imgbx">
+                <img :src="require(`../assets/courses/${blog.img}`)" alt="" />
             </div>
-            <div class="info">
-              <h5>
-                ARTIST
-              </h5>
-              <div class="descrition">
-                <p>{{ blog.descrition }}</p>
-              </div>
-              <div class="info_numbers d-flex">
+            <div class="content">
+                <h2 class="text-muted">ARTIST</h2>
+                <p>
+                    {{blog.descrition}}
+                </p>
+                 <div class="info_numbers d-flex">
                 <h6>
                   <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="calendar" class="svg-inline--fa fa-calendar fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M400 64h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V160h352v298c0 3.3-2.7 6-6 6z"></path></svg>
                   {{ blog.date }}
@@ -535,10 +537,12 @@
                 </h6>
               </div>
             </div>
-          </div>
+        </div>
         </div>
       </div>
     </section>
+
+
     <!-- sezione newsletter -->
     <section id="newsletter" class="container row gy-5">
       <!-- svg cerchio  -->
@@ -591,101 +595,16 @@
 
 <script>
 export default {
+  props:{
+    corsiSlide1:Array,
+    corsiSlide2:Array,
+    corsiSlide3:Array
+  },
   data() {
     return {
       array1: true,
       array2: false,
       array3: false,
-      corsiSlide1: [
-        {
-          img: "slide.jpg",
-          price: "$40.",
-          free: false,
-          value: "00",
-          descrition: "Learning to write as a professional Author",
-          lessons: "20 lessons",
-          students: "50 students",
-        },
-        {
-          img: "slide2.jpg",
-          price: "$0.",
-          value: "00",
-          descrition: "Customer-Centric info-Tech Strategist",
-          free: true,
-          lessons: "24 lessons",
-          students: "769 students",
-        },
-        {
-          img: "slide3.jpg",
-          price: "$19.",
-          value: "00",
-          free: false,
-          descrition: "Open Programming Courses for Everyone: Python",
-          lessons: "17 lessons",
-          students: "62 students",
-        },
-      ],
-      corsiSlide2: [
-        {
-          img: "https://images.pexels.com/photos/6929180/pexels-photo-6929180.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          price: "$0.",
-          free: true,
-          value: "00",
-          descrition:
-            "Corso completo di Data Science e machine learning con Python",
-          lessons: "40 lessons",
-          students: "10 students",
-        },
-        {
-          img: "https://images.pexels.com/photos/6929190/pexels-photo-6929190.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          price: "$12.",
-          value: "00",
-          descrition: "Guida Pratica e Completa a Django, Python e Bootstrap",
-          free: false,
-          lessons: "5 lessons",
-          students: "300 students",
-        },
-        {
-          img: "https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          price: "$30.",
-          value: "00",
-          free: false,
-          descrition:
-            "Social Media Marketing - Il Corso Completo con Certificato",
-          lessons: "7 lessons",
-          students: "70 students",
-        },
-      ],
-      corsiSlide3: [
-        {
-          img: "https://images.pexels.com/photos/6224/hands-people-woman-working.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          price: "$110.",
-          free: false,
-          value: "00",
-          descrition: "FACEBOOK ADS GURU 2021 - Corso operativo completo",
-          lessons: "10 lessons",
-          students: "30 students",
-        },
-        {
-          img: "https://images.pexels.com/photos/6229/marketing-board-strategy.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          price: "$0.",
-          value: "00",
-          descrition: "CORSO COPYWRITING: SCRIVERE PER VENDERE",
-          free: true,
-          lessons: "2 lessons",
-          students: "800 students",
-        },
-        {
-          img: "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          price: "$50.",
-          value: "00",
-          free: false,
-          descrition:
-            "Web Marketing 4.0: il corso completo di digital marketing",
-          lessons: "5 lessons",
-          students: "50 students",
-        },
-      ],
       slideBlog:[
         {
           img:'artist1.jpeg',
@@ -705,7 +624,7 @@ export default {
           date:'May 15,2020',
           views:'397 Views'
         },
-      ]
+      ],
     };
   },
   methods: {
@@ -1039,10 +958,19 @@ export default {
       filter: opacity(0.3);
       position: relative;
       z-index: 1;
+      &:hover{
+        z-index: 5;
+        transform: scale(90%);
+        filter: opacity(1);
+        transition: all .3s ease-in-out;
+      }
       .avatar {
+        display: flex;
+        align-items: center;
         img {
           width: 5rem;
           border-radius: 50%;
+          margin-right: 1rem;
         }
       }
     }
@@ -1054,6 +982,10 @@ export default {
       font-size: 1.3rem;
       border: none;
       box-shadow: 0px 0px 20px 0px rgb(194, 194, 194);
+      &:hover{
+        transform: scale(95%);
+        transition:all .5s ease-in-out;
+      }
       .avatar {
         align-items: center;
         img {
@@ -1134,67 +1066,95 @@ export default {
         border-radius: 5px;
         padding: 1rem 3rem;
         margin: 1rem 0;
-      }
-    }
-  }
-}
-// sezione blog
-#blog{
-  .blog_title{
-    text-align: center;
-    margin: 5rem 0;
-    h2{
-      font-size: 3rem;
-      font-weight: bold;
-    }
-  }
-  .row {
-    margin-top: 2rem;
-    .col-md-4:hover .descrition {
-      color: $brandColor;
-    }
-    .col-md-4:hover .card {
-      transform: translateY(-2rem);
-      transition: all 2s;
-    }
-    .card {
-      height: 100%;
-      border: none;
-      background-color: rgba(228, 228, 228, 0.404);
-    }
-    .image {
-      height: 14rem;
-      img {
-        width: 100%;
-        height: 100%;
-        border-radius: 5px;
-        object-fit: cover;
-      }
-    }
-    .info {
-      padding: 1rem;
-      h5{
-        color: $greyText;
-        font-size: .8rem;
-      }
-      .descrition {
-        font-weight: bolder;
-        font-size: 1.2rem;
-      }
-    }
-    .info_numbers {
-      align-items: center;
-      h6 {
-        color:#565656;
-        font-size: 0.8rem;
-        margin-right: 2rem;
-        svg {
-          width: 0.8rem;
+        &:hover{
+          background-color: white;
+          color: $brandColor;
+          box-shadow: 0px 0px 10px 5px $brandColor;
+          transition:all .5s ease-in-out;
         }
       }
     }
   }
 }
+// sezione blog
+  #blog{
+    // titoli +
+    .blog_title{
+      text-align: center;
+      margin: 5rem 0;
+      h2{
+        font-size: 3rem;
+        font-weight: bold;
+      }
+    }
+    // card 
+    .col-md-4{
+      margin: 5rem 0;
+    }
+   .card{
+      max-width: 330px;
+      height: 420px;
+      height: 120px;
+      background-color: white;
+      margin: auto;
+      padding: 20px 15px;
+      display: flex;
+      border-radius: 4px;
+      flex-direction: column;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, .5);
+      transition: .3s ease-in-out;
+  }
+   .card:hover{
+      height: 350px;
+      cursor: pointer;
+  }
+   .card .imgbx{
+      position: relative;
+      background-color: white;
+      top: -60px;
+      min-width: initial;
+      border-radius: 4px;
+      z-index: 1;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, .5);
+  }
+   .card .imgbx img{
+      max-width: 100%;
+      border-radius: 4px;
+  }
+   .card .content{
+      position: relative;
+      margin-top: -140px;
+      color: #111;
+      visibility: hidden;
+      opacity: 0;
+      transition: .3s ease-in-out;
+      transition-delay: .3s;
+      h2{
+        font-size: 1rem;
+      }
+      p{
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .info_numbers {
+        align-items: center;
+        h6 {
+          color:#565656;
+          font-size: 0.8rem;
+          margin-right: 2rem;
+          svg {
+            width: 0.8rem;
+          }
+        }
+      }
+  }
+   .card:hover .content{
+      visibility: visible;
+      opacity: 1;
+      margin-top: -40px;
+      transition-delay: .3s;
+  }
+  }
 // sezione newsletter
 #newsletter{
   margin: 3rem auto;
@@ -1245,6 +1205,7 @@ export default {
     position: relative;
     align-items: center;
     justify-content: center;
+    padding: 3rem;
     img{
       width: 6rem;
       &:last-child{
@@ -1256,4 +1217,5 @@ export default {
     }
   }
 }
+
 </style>

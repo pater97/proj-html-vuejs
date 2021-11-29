@@ -209,6 +209,9 @@ export default {
     margin: 0 1rem;
     img {
       width: 1.2rem;
+      &:hover{
+        cursor: pointer;
+      }
     }
   }
   .cart {
@@ -239,6 +242,9 @@ export default {
     svg {
       width: 1rem;
       color: $brandColor;
+      &:hover{
+        cursor: pointer;
+      }
     }
   }
 }
