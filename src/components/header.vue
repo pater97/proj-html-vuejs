@@ -4,9 +4,16 @@
     <section class="left d-flex align-items-center">
       <div class="hidden_hamburger">
         <div class="collapse" id="navbarToggleExternalContent">
-          <div class="p-4">
-            <h5 class="h4">Collapsed content</h5>
-            <span class="text-muted">Toggleable via the navbar brand.</span>
+          <div class="p-4 link_hidden_burger" v-for="link in navBar" :key="link.name">
+            <h5  class="h4 ">{{link.name}}</h5>
+            <span>
+              <img class="chevron" src="../assets/icon/chevron-down-solid.svg" alt="">
+            </span>
+            <div class="dropdown">
+            <a>{{link.dd1}}</a>
+            <a>{{link.dd2}}</a>
+            <a>{{link.dd3}}</a>
+          </div>
           </div>
         </div>
         <nav class="navbar navbar-dark">
@@ -110,6 +117,38 @@ export default {
 .left {
   .hidden_hamburger{
       display: none;
+      .link_hidden_burger{
+        &:hover{
+          background-color: $brandColor;
+          color: white;
+          border-radius: 10px;
+          position: relative;
+        }
+        &:hover img{
+          filter: invert(1);
+          transform: rotate(270deg);
+          transition: all .5s;
+        }
+        &:hover .dropdown{
+            display: flex;
+            flex-direction: column;
+          }
+        img{
+          width: 1rem;
+        }
+        .dropdown{
+          position: absolute;
+          background-color: $brandColor;
+          display: none;
+          padding: 1rem;
+          color: white;
+          right: -3rem;
+          &:hover a{
+            cursor: pointer;
+            border-bottom: 1px solid #3f3a64;
+          }
+        }
+      }
       .navbar{
           background-color: $brandColor;
           border-radius: 30px;

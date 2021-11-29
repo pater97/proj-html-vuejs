@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <!-- sezione inerente alla 'work culture' con dati -->
-    <section id="work_culture">
+    <section id="work_culture" class="container">
       <div class="row">
         <!-- colonna di sinistra con testo -->
         <div class="text col-md-6 d-flex">
@@ -103,8 +103,9 @@
       </div>
     </section>
     <!-- sezione "upgrade your skills" -->
-    <section id="upgrade_skills">
-      <div class="row">
+    <section id="upgrade_skills" class="container">
+      <div class="row gy-5">
+        <!-- colonna di sinistra  -->
         <div class="col-md-6 upgrade_image position-relative">
           <div class="upgrade_principal">
             <img
@@ -121,6 +122,7 @@
           <img class="up_shape_radius" src="../assets/shape/mc5.png" alt="" />
           <img class="up_shape_square" src="../assets/shape/mc7.png" alt="" />
         </div>
+        <!-- colonna di destra  -->
         <div class="col-md-6 upgrade_text">
           <h6>HOW WE WORK</h6>
           <h2>
@@ -156,13 +158,14 @@
     </section>
     <!-- sezione anteprima corsi  -->
     <section id="courses">
-      <!-- titolo -->
+      <div class="container">
+         <!-- titolo -->
       <div class="title_section text-center">
         <h6>JOIN MAXCOACH AT THE BEST</h6>
         <h2>Lastes Online <span class="brand_color">Courses</span></h2>
       </div>
       <!-- gruppo slide 1 -->
-      <div class="row" v-show="array1">
+      <div class="row gy-5" v-show="array1">
         <div class="col-md-4" v-for="corso in corsiSlide1" :key="corso.value">
           <div class="card">
             <div class="image">
@@ -221,7 +224,7 @@
         </div>
       </div>
       <!-- gruppo slide 2 -->
-      <div class="row" v-show="array2">
+      <div class="row gy-5" v-show="array2">
         <div class="col-md-4" v-for="corso in corsiSlide2" :key="corso.value">
           <div class="card">
             <div class="image">
@@ -280,7 +283,7 @@
         </div>
       </div>
       <!-- gruppo slide 3 -->
-      <div class="row" v-show="array3">
+      <div class="row gy-5" v-show="array3">
         <div class="col-md-4" v-for="corso in corsiSlide3" :key="corso.value">
           <div class="card">
             <div class="image">
@@ -368,10 +371,12 @@
           </a>
         </p>
       </div>
+      </div>
     </section>
     <!-- sezione testimonianze  -->
-    <section id="testimonials">
-      <div class="row">
+    <section id="testimonials" class="container">
+      <div class="row gy-5">
+        <!-- colonna di sinistra  -->
         <div class="col-md-4">
           <h6>TESTIMONIALS</h6>
           <h2>Why Do People <span class="brand_color">*Hearts*</span> Us?</h2>
@@ -399,6 +404,7 @@
             </svg>
           </p>
         </div>
+        <!-- colonna di destra  -->
         <div class="col-md-8">
           <div class="card bottom">
             <p>
@@ -444,8 +450,9 @@
       </div>
     </section>
     <!-- sezione guida -->
-    <section id="guida">
-      <div class="row">
+    <section id="guida" class="container">
+      <div class="row gy-5">
+        <!-- colonna di sinistra -->
         <div class="left col-md-6">
           <img
             class="team_img"
@@ -460,6 +467,7 @@
           <img class="mc5" src="../assets/shape/mc5.png" alt="" />
           <img class="mc7" src="../assets/shape/mc7.png" alt="" />
         </div>
+        <!-- colonna di destra  -->
         <div class="right col-md-6">
             <svg
               aria-hidden="true"
@@ -493,7 +501,7 @@
       </div>
     </section>
     <!-- seizione blog -->
-    <section id="blog">
+    <section id="blog" class="container">
       <div class="blog_title">
         <h6 class="text-muted">
           READ FOR MORE JOYMENT
@@ -502,7 +510,8 @@
           Lastes from <span class="brand_color">Our Blogs</span>
         </h2>
       </div>
-      <div class="row">
+      <!-- slide card blog  -->
+      <div class="row gy-5">
         <div class="col-md-4" v-for="blog in slideBlog" :key="blog.descrition">
           <div class="card">
             <div class="image">
@@ -531,7 +540,8 @@
       </div>
     </section>
     <!-- sezione newsletter -->
-    <section id="newsletter" class="row">
+    <section id="newsletter" class="container row gy-5">
+      <!-- svg cerchio  -->
       <div class="col-md-3 circle_shape">
         <svg
               aria-hidden="true"
@@ -549,6 +559,7 @@
               ></path>
             </svg>
       </div>
+      <!-- colonna di inserimento teesto  -->
       <div class="col-md-6 text_newsletter">
         <h2>
         Subscribe <span class="brand_color">Newsletter</span>
@@ -561,6 +572,7 @@
         <button>Subscribe</button>
       </div>
       </div>
+      <!-- colonna con forme geometriche  -->
       <div class="col-md-3 shapes">
         <img
             class="geometric_shape"
@@ -722,6 +734,9 @@ export default {
   color: $brandColor;
 }
 // impostazioni comuni
+.container{
+  margin: auto;
+}
 .text,
 .work_culture_image {
   padding: 8rem 0;
@@ -732,7 +747,9 @@ export default {
 .secondary_image {
   position: absolute;
 }
-// sezione colonna di testo
+// sezione work culture 
+#work_culture{
+  // sezione colonna di testo
 .text {
   .left_text {
     h2 {
@@ -793,6 +810,7 @@ export default {
     top: 5rem;
     right: 5rem;
   }
+}
 }
 // SEZIONE CON DATI
 #dati {
@@ -893,6 +911,7 @@ export default {
       transform: scale(105%);
     }
     .card {
+      height: 100%;
       border: none;
       background-color: rgba(228, 228, 228, 0.404);
     }
@@ -911,6 +930,7 @@ export default {
         width: 100%;
         height: 100%;
         border-radius: 5px;
+        object-fit: cover;
       }
     }
     .info {
@@ -985,7 +1005,7 @@ export default {
 }
 // sezione testimonianze
 #testimonials {
-  margin: 5rem 0;
+  margin: 5rem auto;
   // colonna di sinistra
   .col-md-4 {
     align-self: center;
@@ -1047,7 +1067,7 @@ export default {
 }
 // sezione guida
 #guida {
-  margin: 10rem 0;
+  margin: 10rem auto;
   // sezione di sinistra
   .left:hover .mc5 {
       transform: rotate(360deg);
@@ -1138,6 +1158,7 @@ export default {
       transition: all 2s;
     }
     .card {
+      height: 100%;
       border: none;
       background-color: rgba(228, 228, 228, 0.404);
     }
@@ -1147,6 +1168,7 @@ export default {
         width: 100%;
         height: 100%;
         border-radius: 5px;
+        object-fit: cover;
       }
     }
     .info {
@@ -1175,7 +1197,7 @@ export default {
 }
 // sezione newsletter
 #newsletter{
-  margin: 3rem 0;
+  margin: 3rem auto;
   .circle_shape,.text_newsletter,.shapes{
     display: flex;
   }

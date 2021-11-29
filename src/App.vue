@@ -8,6 +8,8 @@
     <heroImage/>
     <!-- MAIN  -->
     <siteMain />
+    <!-- footer -->
+    <siteFooter/>
   </div>
 </template>
 
@@ -16,6 +18,7 @@
 import siteHeader from './components/header.vue'
 import heroImage from './components/heroImage.vue'
 import siteMain from './components/main.vue'
+import siteFooter from './components/footer.vue'
 // font
 import "@fontsource/montserrat"
 
@@ -24,7 +27,8 @@ export default {
   components: {
     siteHeader,
     heroImage,
-    siteMain
+    siteMain,
+    siteFooter
   },
 data() {
   return{
