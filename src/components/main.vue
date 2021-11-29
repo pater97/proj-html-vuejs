@@ -733,6 +733,11 @@ export default {
 }
 // SEZIONE CON DATI
 #dati {
+  .col-md-3:hover{
+    transform: translateY(-1rem) scale(130%);
+    
+    transition: all 1s;
+  }
   h6 {
     color: #6e6b69;
     font-size: 0.7rem;
@@ -754,6 +759,7 @@ export default {
         box-shadow: 2px 14px 20px 0px #625e5e;
         &:hover {
           filter: brightness(0.5);
+          box-shadow: 2px 14px 20px 0px $brandColor;
         }
       }
       .youtube_play {
@@ -1107,6 +1113,7 @@ export default {
    .card:hover{
       height: 350px;
       cursor: pointer;
+      border-bottom: 2px solid $brandColor;
   }
    .card .imgbx{
       position: relative;
