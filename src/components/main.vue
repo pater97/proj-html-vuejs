@@ -492,6 +492,88 @@
         </div>
       </div>
     </section>
+    <!-- seizione blog -->
+    <section id="blog">
+      <div class="blog_title">
+        <h6 class="text-muted">
+          READ FOR MORE JOYMENT
+        </h6>
+        <h2>
+          Lastes from <span class="brand_color">Our Blogs</span>
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-4" v-for="blog in slideBlog" :key="blog.descrition">
+          <div class="card">
+            <div class="image">
+              <img :src="require(`../assets/courses/${blog.img}`)" alt="" />
+            </div>
+            <div class="info">
+              <h5>
+                ARTIST
+              </h5>
+              <div class="descrition">
+                <p>{{ blog.descrition }}</p>
+              </div>
+              <div class="info_numbers d-flex">
+                <h6>
+                  <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="calendar" class="svg-inline--fa fa-calendar fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M400 64h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V160h352v298c0 3.3-2.7 6-6 6z"></path></svg>
+                  {{ blog.date }}
+                </h6>
+                <h6>
+                  <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="eye" class="svg-inline--fa fa-eye fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M288 144a110.94 110.94 0 0 0-31.24 5 55.4 55.4 0 0 1 7.24 27 56 56 0 0 1-56 56 55.4 55.4 0 0 1-27-7.24A111.71 111.71 0 1 0 288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400c-98.65 0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 400 288 400z"></path></svg>
+                  {{ blog.views }}
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- sezione newsletter -->
+    <section id="newsletter" class="row">
+      <div class="col-md-3 circle_shape">
+        <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="far"
+              data-icon="circle"
+              class="svg-inline--fa fa-circle fa-w-16"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"
+              ></path>
+            </svg>
+      </div>
+      <div class="col-md-6 text_newsletter">
+        <h2>
+        Subscribe <span class="brand_color">Newsletter</span>
+      </h2>
+      <p>
+        Enter your email adress to register to our newsletter subscriptiondelivered on a regular basis!
+      </p>
+      <div class="input">
+        <input type="text" placeholder="Enter your email">
+        <button>Subscribe</button>
+      </div>
+      </div>
+      <div class="col-md-3 shapes">
+        <img
+            class="geometric_shape"
+            src="../assets/shape/maxcoach-shape-02.png"
+            alt=""
+          />
+          <img
+            class="square_shape"
+            src="../assets/shape/maxcoach-shape-07.png"
+            alt=""
+          />
+      </div>
+    </section>
   </div>
 </template>
 
@@ -592,6 +674,26 @@ export default {
           students: "50 students",
         },
       ],
+      slideBlog:[
+        {
+          img:'artist1.jpeg',
+          descrition:'Brush Stokes Energize Trees in Paintings',
+          date:'May 15,2020',
+          views:'688 Views'
+        },
+         {
+          img:'artist2.jpg',
+          descrition:'Poket-sized Notebook Hold Miniature Paintings',
+          date:'May 15,2020',
+          views:'603 Views'
+        },
+         {
+          img:'artist3.jpg',
+          descrition:'Connection Beetween Self-portraits And Identity',
+          date:'May 15,2020',
+          views:'397 Views'
+        },
+      ]
     };
   },
   methods: {
@@ -947,10 +1049,12 @@ export default {
 #guida {
   margin: 10rem 0;
   // sezione di sinistra
-  .left:hover .mc5,
-    .mc7,
-    .mc_shape {
+  .left:hover .mc5 {
       transform: rotate(360deg);
+      transition: all 3s;
+    }
+    .left:hover .mc7{
+      transform: translateY(3rem);
       transition: all 3s;
     }
   .left,
@@ -1010,6 +1114,122 @@ export default {
         border-radius: 5px;
         padding: 1rem 3rem;
         margin: 1rem 0;
+      }
+    }
+  }
+}
+// sezione blog
+#blog{
+  .blog_title{
+    text-align: center;
+    margin: 5rem 0;
+    h2{
+      font-size: 3rem;
+      font-weight: bold;
+    }
+  }
+  .row {
+    margin-top: 2rem;
+    .col-md-4:hover .descrition {
+      color: $brandColor;
+    }
+    .col-md-4:hover .card {
+      transform: translateY(-2rem);
+      transition: all 2s;
+    }
+    .card {
+      border: none;
+      background-color: rgba(228, 228, 228, 0.404);
+    }
+    .image {
+      height: 14rem;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+      }
+    }
+    .info {
+      padding: 1rem;
+      h5{
+        color: $greyText;
+        font-size: .8rem;
+      }
+      .descrition {
+        font-weight: bolder;
+        font-size: 1.2rem;
+      }
+    }
+    .info_numbers {
+      align-items: center;
+      h6 {
+        color:#565656;
+        font-size: 0.8rem;
+        margin-right: 2rem;
+        svg {
+          width: 0.8rem;
+        }
+      }
+    }
+  }
+}
+// sezione newsletter
+#newsletter{
+  margin: 3rem 0;
+  .circle_shape,.text_newsletter,.shapes{
+    display: flex;
+  }
+  .circle_shape{
+    align-items: center;
+    svg{
+      width: 3rem;
+      color: $brandColor;
+    }
+  }
+  .text_newsletter{
+    flex-direction: column;
+    text-align: center;
+    h2{
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      span{
+        font-weight: 400;
+      }
+    }
+    p{
+      margin-bottom: 2.5rem;
+    }
+    .input{
+      height: 3rem;
+      input{
+        border: none;
+        background-color: #F5F5F5;
+        height: 100%;
+        width: 80%;
+        padding: 1rem;
+      }
+      button{
+        border: none;
+        background-color: $brandColor;
+        color: white;
+        height: 100%;
+        width: 20%;
+        font-weight: bold;
+      }
+    }
+  }
+  .shapes{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    img{
+      width: 6rem;
+      &:last-child{
+        position: absolute;
+        transform: rotate(200deg);
+        top: 0;
+        left: 3.4rem;
       }
     }
   }
